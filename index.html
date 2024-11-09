@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berlin Store</title>
+</head>
+<link rel="shortcut icon" type="image/png" href="favicon.jpg" >
+<body>
+<h1>المنتجات المتوفرة</h1>
+<div class="container" id="productContainer">
+</div>
+<script>
+const products = [
+{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w1.jpg" },
+{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w2.jpg" },
+{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w3.jpg" },
+{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w4.jpg" },
+{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w5.jpg" },
+{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w6.jpg" },
+{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w7.jpg" },
+{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w8.jpg" },
+{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w9.jpg" },
+{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w10.jpg" },
+
+];
+const productContainer = document.getElementById("productContainer");
+products.forEach(product => {
+const box = document.createElement("div");
+box.classList.add("box");
+box.innerHTML = `
+<img src="${product.imgSrc}" alt="${product.name}">
+<div class="info">
+<p>${product.name}</p>
+<p class="price">${product.price}</p>
+</div>
+`;
+productContainer.appendChild(box);
+});
+ </script>
+</body>
+</html>
