@@ -7,6 +7,19 @@
 <title>Berlin Store</title>
 </head>
 <link rel="shortcut icon" type="image/png" href="favicon.jpg" >
+ <style>
+  @media (max-width: 768px) {
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* 3 columns on mobile */
+                overflow-x: hidden; /* Remove  scrolling */
+            }
+            .box {
+                width: 100%; /* Full width in grid layout */
+                margin-bottom: 20px; /* Add spacing between rows */
+            }
+}
+ </style>
 <body>
 <div class="section" id="bagsSection">
 <h2>
