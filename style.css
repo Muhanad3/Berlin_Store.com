@@ -64,11 +64,11 @@ h2 {
 @media (max-width: 768px) {
             .container {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr); /* 3 columns on mobile */
-                overflow-x: hidden; /* Remove  scrolling */
+                grid-template-columns: repeat(3, 1fr);
+                overflow-x: hidden;
             }
             .box {
-                width: 100%; /* Full width in grid layout */
-                margin-bottom: 20px; /* Add spacing between rows */
+                width: 100%;
+                margin-bottom: 20px;
             }
 }
