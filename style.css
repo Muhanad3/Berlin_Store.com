@@ -61,3 +61,14 @@ h2 {
     color: #555;
     margin-top: 5px;
 }
+@media (max-width: 768px) {
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* 3 columns on mobile */
+                overflow-x: hidden; /* Remove  scrolling */
+            }
+            .box {
+                width: 100%; /* Full width in grid layout */
+                margin-bottom: 20px; /* Add spacing between rows */
+            }
+}
