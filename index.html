@@ -2,27 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
 <title>Berlin Store</title>
 </head>
 <link rel="shortcut icon" type="image/png" href="favicon.jpg" >
 <body>
-<h1>المنتجات المتوفرة</h1>
-<div class="container" id="productContainer">
+<div class="section" id="bagsSection">
+<h2>الحقائب</h2>
+<div class="container" id="bagsContainer">
+</div>
+</div>
+<div class="section" id="watchesSection">
+<h2>الساعات</h2>
+<div class="container" id="watchesContainer">
+</div>
 </div>
 <script>
-const products = [
-{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w1.jpg" },
-{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w2.jpg" },
-{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w3.jpg" },
-{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w4.jpg" },
-{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w5.jpg" },
-{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w6.jpg" },
-{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w7.jpg" },
-{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w8.jpg" },
-{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w9.jpg" },
-{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w10.jpg" },
+const products = {
+bags: [
 { name: "جنطة نسائية", price: "11,000IQD", imgSrc: "b1.jpg" },
 { name: "جنطة نسائية", price: "11,000IQD", imgSrc: "b2.jpg" },
 { name: "جنطة نسائية", price: "11,000IQD", imgSrc: "b3.jpg" },
@@ -36,9 +34,23 @@ const products = [
 { name: "جنطة نسائية", price: "11,000IQD", imgSrc: "b11.jpg" },
 { name: "جنطة نسائية", price: "11,000IQD", imgSrc: "b12.jpg" },
 { name: "جنطة نسائية", price: "11,000IQD", imgSrc: "b13.jpg" },
-];
-const productContainer = document.getElementById("productContainer");
-products.forEach(product => {
+],
+watches: [
+{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w1.jpg" },
+{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w2.jpg" },
+{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w3.jpg" },
+{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w4.jpg" },
+{ name: "ساعة نسائية", price: "13,000IQD", imgSrc: "w5.jpg" },
+{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w6.jpg" },
+{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w7.jpg" },
+{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w8.jpg" },
+{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w9.jpg" },
+{ name: "ساعة نسائية", price: "15,000IQD", imgSrc: "w10.jpg" },
+]
+};
+const renderProducts = (productsArray, containerId) => {
+ const container = document.getElementById(containerId);
+productsArray.forEach(product => {
 const box = document.createElement("div");
 box.classList.add("box");
 box.innerHTML = `
@@ -48,8 +60,11 @@ box.innerHTML = `
 <p class="price">${product.price}</p>
 </div>
 `;
-productContainer.appendChild(box);
+container.appendChild(box);
 });
- </script>
+};
+renderProducts(products.bags, "bagsContainer");
+renderProducts(products.watches, "watchesContainer");
+</script>
 </body>
 </html>
