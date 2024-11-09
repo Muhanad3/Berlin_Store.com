@@ -20,7 +20,7 @@ h1 {
     padding: 20px;
 }
 .box {
-    width: 200px;
+    width: 300px; /* Increase the width */
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -28,13 +28,13 @@ h1 {
     background-color: #fff;
     transition: transform 0.3s;
 }
-.box:hover {
-    transform: scale(1.05);
-}
 .box img {
     width: 100%;
-    height: 150px;
+    height: 200px; /* Increase the height */
     object-fit: cover;
+}
+.box:hover {
+    transform: scale(1.05);
 }
 .box .info {
     padding: 10px;
